@@ -9,10 +9,10 @@
 - Open vscode command pallete and type "Clone Repository"
 
 ![clone remote](https://user-images.githubusercontent.com/26228931/150635619-589d7629-7227-4732-8db6-5206acfa0797.png)
-![clone remote2](https://user-images.githubusercontent.com/26228931/150635629-9b68f4fb-47e6-4269-9c7d-1156532d96fa.png)
 
-- Type "svicervlad/drupal-vscode-devcontainer" and chose main branch or copy "https://github.com/svicervlad/drupal-vscode-devcontainer.git"
-![clone remote3](https://user-images.githubusercontent.com/26228931/150635631-be009168-cb7b-4671-b089-725ba94f218a.png)
+- Copy `https://github.com/svicervlad/drupal-vscode-devcontainer.git`
+![2022-01-22_14-49](https://user-images.githubusercontent.com/26228931/150639181-dc1bf441-5780-4b74-9f98-b86d9fa55ce5.png)
+
 
 - Wait to "composer install" and "drush site-install" commands is done
 
