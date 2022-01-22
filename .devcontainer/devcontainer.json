@@ -6,36 +6,107 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspace",
-	
-	// Set *default* container specific settings.json values on container create.
-	"settings": { 
-		"sqltools.connections": [{
-			"name": "Container database",
-			"driver": "MariaDB",
-			"server": "localhost",
-			"previewLimit": 50,
-			"port": 3306,
-			"database": "mariadb",
-			"username": "root",
-			"password": "mariadb"
-		}]
+	"settings": {
+		"editor.renderWhitespace": "boundary",
+		"editor.rulers": [
+			120
+		],
+		"editor.tabSize": 2,
+		"editor.wordWrap": "off",
+		"editor.wordWrapColumn": 120,
+		"emmet.includeLanguages": {
+			"twig": "html"
+		},
+		"files.associations": {
+			"*.inc": "php",
+			"*.module": "php",
+			"*.install": "php",
+			"*.theme": "php",
+			"*.profile": "php",
+			"*.tpl.php": "php",
+			"*.test": "php",
+			"*.php": "php",
+			"*.info": "ini"
+		},
+		"html.format.enable": true,
+		"html.format.endWithNewline": true,
+		"html.format.indentInnerHtml": true,
+		"html.format.wrapLineLength": 80,
+		"intelephense.completion.maxItems": 1000,
+		"intelephense.environment.phpVersion": "7.4.0",
+		"intelephense.files.associations": [
+			"*.php",
+			"*.phtml",
+			"*.inc",
+			"*.module",
+			"*.install",
+			"*.theme",
+			"*.tpl.php",
+			"*.test"
+		],
+		"intelephense.files.maxSize": 10000000,
+		"intelephense.format.enable": true,
+		"intelephense.maxMemory": 2000,
+		"intelephense.phpdoc.functionTemplate": {
+			"summary": "$1",
+			"tags": [
+				"@param ${1:$SYMBOL_TYPE} $SYMBOL_NAME $2\n  $SYMBOL_KIND $SYMBOL_TYPE.",
+				"@return ${1:$SYMBOL_TYPE} $2",
+				"@throws ${1:$SYMBOL_TYPE} $2"
+			]
+		},
+		"intelephense.phpdoc.propertyTemplate": {
+			"summary": "$1",
+			"tags": [
+				"@var ${1:$SYMBOL_TYPE}"
+			]
+		},
+		"intelephense.phpdoc.returnVoid": false,
+		"intelephense.phpdoc.useFullyQualifiedNames": true,
+		"phpsab.executablePathCBF": "vendor/bin/phpcbf",
+		"phpsab.executablePathCS": "vendor/bin/phpcs",
+		"phpsab.fixerArguments": [
+			"--extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml"
+		],
+		"phpsab.fixerEnable": true,
+		"phpsab.snifferArguments": [
+			"--extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml"
+		],
+		"phpsab.snifferMode": "onType",
+		"phpsab.snifferTypeDelay": 500,
+		"phpsab.standard": "Drupal,DrupalPractice",
+		"sqltools.connections": [
+			{
+				"name": "Container database",
+				"driver": "MariaDB",
+				"server": "localhost",
+				"previewLimit": 50,
+				"port": 3306,
+				"database": "mariadb",
+				"username": "root",
+				"password": "mariadb"
+			}
+		]
 	},
-
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"felixfbecker.php-debug",
-		"felixfbecker.php-intellisense",
+		"bmewburn.vscode-intelephense-client",
 		"mrmlnc.vscode-apache",
 		"mtxr.sqltools",
-		"mtxr.sqltools-driver-mysql"
+		"mtxr.sqltools-driver-mysql",
+		"eamodio.gitlens",
+		"nadim-vscode.symfony-code-snippets",
+		"valeryanm.vscode-phpsab"
 	],
-
 	// For use with PHP or Apache (e.g.php -S localhost:8080 or apache2ctl start)
-	"forwardPorts": [8080, 3306],
-
+	"forwardPorts": [
+		8080,
+		3306
+	],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
-
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "vscode"
+	"remoteUser": "vscode",
+	"postCreateCommand": "composer install -n"
 }
