@@ -108,5 +108,5 @@
 	// "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
-	"postCreateCommand": "composer install -n"
+	"postCreateCommand": "composer install -n && drush si --site-name=DEV --account-pass=admin -y"
 }

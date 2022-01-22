@@ -16,5 +16,10 @@ RUN docker-php-ext-configure gd \
 
 RUN docker-php-ext-install -j "$(nproc)" gd opcache mysqli pdo pdo_mysql zip
 
+RUN sudo curl -fsSL -o /usr/local/bin/drush "https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar" && \
+  sudo chmod +x /usr/local/bin/drush
+
+RUN echo "xdebug.log=/dev/null" >> /usr/local/etc/php/conf.d/xdebug.ini
+
 ARG NODE_VERSION="none"
 RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
