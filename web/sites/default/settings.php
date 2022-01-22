@@ -2,6 +2,7 @@
 
 /**
  * @file
+ * Drupal site-specific configuration file.
  */
 
 $databases = [
