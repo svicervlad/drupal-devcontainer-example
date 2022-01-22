@@ -46,21 +46,6 @@
 		],
 		"intelephense.files.maxSize": 10000000,
 		"intelephense.format.enable": true,
-		"intelephense.maxMemory": 2000,
-		"intelephense.phpdoc.functionTemplate": {
-			"summary": "$1",
-			"tags": [
-				"@param ${1:$SYMBOL_TYPE} $SYMBOL_NAME $2\n  $SYMBOL_KIND $SYMBOL_TYPE.",
-				"@return ${1:$SYMBOL_TYPE} $2",
-				"@throws ${1:$SYMBOL_TYPE} $2"
-			]
-		},
-		"intelephense.phpdoc.propertyTemplate": {
-			"summary": "$1",
-			"tags": [
-				"@var ${1:$SYMBOL_TYPE}"
-			]
-		},
 		"intelephense.phpdoc.returnVoid": false,
 		"intelephense.phpdoc.useFullyQualifiedNames": true,
 		"phpsab.executablePathCBF": "vendor/bin/phpcbf",
@@ -92,6 +77,7 @@
 	"extensions": [
 		"xdebug.php-debug",
 		"bmewburn.vscode-intelephense-client",
+		"neilbrayfield.php-docblocker",
 		"mrmlnc.vscode-apache",
 		"mtxr.sqltools",
 		"mtxr.sqltools-driver-mysql",
