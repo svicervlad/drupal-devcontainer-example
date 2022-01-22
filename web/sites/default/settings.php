@@ -20,6 +20,7 @@ $databases = [
 
 $settings["file_temp_path"] = '/tmp';
 $settings['config_sync_directory'] = 'configs';
+$settings['file_public_path'] = 'sites/default/files';
 $settings['file_private_path'] = __DIR__ . '/files/private';
 $settings['trusted_host_patterns'] = [];
 $settings["hash_salt"] = 'sgaftdghyrtwhybfdazfdsagtrehyrth';
