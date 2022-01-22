@@ -2,7 +2,7 @@
 
 ## Requirements
 
-[Follow official instruction](https://code.visualstudio.com/docs/remote/containers#_getting-started)
+[Follow official instruction](https://code.visualstudio.com/docs/remote/containers-tutorial)
 
 ## Quick start
 
