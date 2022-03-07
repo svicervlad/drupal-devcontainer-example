@@ -6,6 +6,11 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspace",
+	"hostRequirements": {
+		"cpus": 2,
+		"memory": "2gb",
+		"storage": "4gb" 
+	 },
 	"settings": {
 		"editor.renderWhitespace": "boundary",
 		"editor.rulers": [
