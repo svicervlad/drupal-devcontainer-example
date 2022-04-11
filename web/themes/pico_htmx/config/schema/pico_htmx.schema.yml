@@ -1,0 +1,8 @@
+# Schema for the configuration files of the Pico HTMX theme.
+pico_htmx.settings:
+  type: theme_settings
+  label: 'Pico HTMX settings'
+  mapping:
+    font_size:
+      type: integer
+      label: Font size

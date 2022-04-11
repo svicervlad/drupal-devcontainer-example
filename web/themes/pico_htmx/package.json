@@ -1,0 +1,10 @@
+{
+  "name": "pico_htmx",
+  "private": true,
+  "scripts": {
+    "livereload": "livereload css"
+  },
+  "devDependencies": {
+    "livereload": "^0.9.3"
+  }
+}
