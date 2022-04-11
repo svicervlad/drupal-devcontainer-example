@@ -9,7 +9,7 @@
 	"hostRequirements": {
 		"cpus": 2,
 		"memory": "2gb",
-		"storage": "4gb" 
+		"storage": "4gb"
 	 },
 	"settings": {
 		"editor.renderWhitespace": "boundary",
@@ -84,8 +84,6 @@
 		"bmewburn.vscode-intelephense-client",
 		"neilbrayfield.php-docblocker",
 		"mrmlnc.vscode-apache",
-		"mtxr.sqltools",
-		"mtxr.sqltools-driver-mysql",
 		"eamodio.gitlens",
 		"nadim-vscode.symfony-code-snippets",
 		"valeryanm.vscode-phpsab"
