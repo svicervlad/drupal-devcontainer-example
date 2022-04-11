@@ -1,0 +1,14 @@
+name: HTMX
+type: profile
+description: 'use htmx with drupal example.'
+version: VERSION
+core_version_requirement: ^9
+install:
+  - node
+  - block
+  - dblog
+  - page_cache
+  - dynamic_page_cache
+  - toolbar
+themes:
+  - pico_htmx

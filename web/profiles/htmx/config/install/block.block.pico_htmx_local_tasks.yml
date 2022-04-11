@@ -1,0 +1,20 @@
+uuid: bd4e1f9a-94d0-4e22-90b6-c5506c2cba05
+langcode: en
+status: true
+dependencies:
+  theme:
+    - pico_htmx
+id: pico_htmx_local_tasks
+theme: pico_htmx
+region: content
+weight: -20
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

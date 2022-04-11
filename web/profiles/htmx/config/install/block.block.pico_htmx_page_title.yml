@@ -1,0 +1,18 @@
+uuid: 319e3a33-689f-4e7c-a9ef-ee9291e39823
+langcode: en
+status: true
+dependencies:
+  theme:
+    - pico_htmx
+id: pico_htmx_page_title
+theme: pico_htmx
+region: content
+weight: -30
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

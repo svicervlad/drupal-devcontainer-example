@@ -1,0 +1,25 @@
+uuid: 4a3fe0cd-2e21-43b2-a8f5-99bcc3c146cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.admin
+  module:
+    - system
+  theme:
+    - pico_htmx
+id: pico_htmx_admin
+theme: pico_htmx
+region: sidebar_first
+weight: 1
+provider: null
+plugin: 'system_menu_block:admin'
+settings:
+  id: 'system_menu_block:admin'
+  label: Administration
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }
