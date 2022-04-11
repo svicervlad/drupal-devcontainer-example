@@ -1,0 +1,20 @@
+uuid: 863f1a0b-beae-4249-8eb4-c67d80805a9a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - pico_htmx
+_core:
+  default_config_hash: 8oiHCbYi2HIoehct88ZDzOqdKAjKVd1ZJPc3JYAv7oY
+id: pico_htmx_local_actions
+theme: pico_htmx
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

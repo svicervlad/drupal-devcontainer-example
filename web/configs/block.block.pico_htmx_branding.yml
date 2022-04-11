@@ -1,0 +1,25 @@
+uuid: 4f96f0a0-61f7-4666-b42e-3107b21e502d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - pico_htmx
+_core:
+  default_config_hash: 9VqBA82oyF_voc2PNGeuH7I6t3g1EowaKy7rPRUY65I
+id: pico_htmx_branding
+theme: pico_htmx
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }
