@@ -4,7 +4,7 @@ global:
     js/pico-htmx.js: {}
   css:
     base:
-      css/base/pico.min.css: {type: external, minified: true}
+      css/base/pico.min.css: {minified: true}
       css/base/elements.css: {}
     component:
       css/components/block.css: {}
