@@ -25,3 +25,4 @@ $settings['file_public_path'] = 'sites/default/files';
 $settings['file_private_path'] = __DIR__ . '/files/private';
 $settings['trusted_host_patterns'] = ['^localhost$'];
 $settings["hash_salt"] = 'sgaftdghyrtwhybfdazfdsagtrehyrth';
+$settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
