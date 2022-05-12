@@ -1,0 +1,4 @@
+services:
+  plugin.manager.lucidpress_dam:
+    class: Drupal\lucidpress_dam\LucidpressDamPluginManager
+    parent: default_plugin_manager
