@@ -7,6 +7,9 @@ namespace Drupal\lucidpress_dam;
  */
 class Collection {
 
+  // Lucidpress api version.
+  const VESRION = 1;
+
   /**
    * The Plugin Manager.
    *
@@ -36,7 +39,10 @@ class Collection {
       $plugin_data = $plugin->getData();
       $result = array_merge($result, $plugin_data);
     }
-    $json = json_encode($result);
+    $json = json_encode([
+      'version' => self::VESRION,
+      'data' => $result,
+    ]);
     return $json;
   }
 
