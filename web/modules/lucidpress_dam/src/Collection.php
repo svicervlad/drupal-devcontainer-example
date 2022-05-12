@@ -37,7 +37,7 @@ class Collection {
       /** @var \Drupal\lucidpress_dam\LucidpressDamPluginBase $plugin */
       $plugin = $this->pluginManager->createInstance($plugin['id']);
       $plugin_data = $plugin->getData();
-      $result = array_merge($result, $plugin_data);
+      $result[] = $plugin_data;
     }
     $json = json_encode([
       'version' => self::VESRION,

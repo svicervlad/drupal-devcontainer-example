@@ -65,8 +65,8 @@ class LucidpressFolder implements \JsonSerializable {
     return [
       'id' => $this->id,
       'name' => $this->name,
-      'folders' => $this->folders,
-      'images' => $this->images,
+      'folders' => array_values($this->folders),
+      'images' => array_values($this->images),
     ];
   }
 
@@ -77,7 +77,7 @@ class LucidpressFolder implements \JsonSerializable {
    *   LucidpressFolder object.
    */
   public function addFolder(LucidpressFolder $folder): void {
-    $this->folders[] = $folder;
+    $this->folders[$folder->id] = $folder;
   }
 
   /**
@@ -94,7 +94,7 @@ class LucidpressFolder implements \JsonSerializable {
    *   The LucidpressImage object.
    */
   public function addImage(LucidpressImage $image): void {
-    $this->images[] = $image;
+    $this->images[$image->id] = $image;
   }
 
 }

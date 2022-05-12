@@ -15,7 +15,7 @@ abstract class LucidpressDamPluginBase extends PluginBase implements LucidpressD
    * {@inheritdoc}
    */
   public function getData() {
-    $general_folder = new LucidpressFolder('100', 'general');
+    $general_folder = new LucidpressFolder('100', $this->getPluginId());
     $drupal_folder = new LucidpressFolder('101', 'drupal');
     $drupal_folder->addImage(new LucidpressImage(
       '100',
@@ -32,7 +32,7 @@ abstract class LucidpressDamPluginBase extends PluginBase implements LucidpressD
       ['drupal', 'logo', 'stacked']
     ));
     $general_folder->addFolder($drupal_folder);
-    return $general_folder->toArray();
+    return $general_folder;
   }
 
 }
