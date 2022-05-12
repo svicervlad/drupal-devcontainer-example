@@ -8,11 +8,11 @@ namespace Drupal\lucidpress_dam;
 interface LucidpressDamInterface {
 
   /**
-   * Returns the translated plugin label.
+   * Returns data collection.
    *
-   * @return string
-   *   The translated title.
+   * @return array
+   *   The data array.
    */
-  public function label();
+  public function getData();
 
 }

@@ -29,6 +29,15 @@ class Collection {
    */
   public function generate() {
     $plugins = $this->pluginManager->getDefinitions();
+    $result = [];
+    foreach ($plugins as $plugin) {
+      /** @var \Drupal\lucidpress_dam\LucidpressDamPluginBase $plugin */
+      $plugin = $this->pluginManager->createInstance($plugin['id']);
+      $plugin_data = $plugin->getData();
+      $result = array_merge($result, $plugin_data);
+    }
+    $json = json_encode($result);
+    return $json;
   }
 
 }

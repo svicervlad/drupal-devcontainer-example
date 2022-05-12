@@ -12,9 +12,8 @@ abstract class LucidpressDamPluginBase extends PluginBase implements LucidpressD
   /**
    * {@inheritdoc}
    */
-  public function label() {
-    // Cast the label to a string since it is a TranslatableMarkup object.
-    return (string) $this->pluginDefinition['label'];
+  public function getData() {
+    return ['example' => 'data'];
   }
 
 }
