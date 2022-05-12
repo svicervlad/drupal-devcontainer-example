@@ -2,7 +2,7 @@
 
 namespace Drupal\lucidpress_dam\Commands;
 
-use Drupal\lucidpress_dam\Collection;
+use Drupal\lucidpress_dam\Generator;
 use Drush\Commands\DrushCommands;
 
 /**
@@ -21,18 +21,18 @@ class LucidpressDamCommands extends DrushCommands {
   /**
    * Lucidpress collection service.
    *
-   * @var \Drupal\lucidpress_dam\Collection
+   * @var \Drupal\lucidpress_dam\Generator
    */
-  protected $collection;
+  protected $generator;
 
   /**
    * Construct.
    *
-   * @param \Drupal\lucidpress_dam\Collection $collection
-   *   Lucidpress collection service.
+   * @param \Drupal\lucidpress_dam\Generator $generator
+   *   Lucidpress generator service.
    */
-  public function __construct(Collection $collection) {
-    $this->collection = $collection;
+  public function __construct(Generator $generator) {
+    $this->generator = $generator;
   }
 
   /**
@@ -48,7 +48,7 @@ class LucidpressDamCommands extends DrushCommands {
    * @aliases lucidpress-gen
    */
   public function generate(string $plugin_id) {
-    $url = $this->collection->generate($plugin_id);
+    $url = $this->generator->generate($plugin_id);
     $this->logger()->success(dt('Lucidpress DAM api file generated, url: ') . $url);
   }
 

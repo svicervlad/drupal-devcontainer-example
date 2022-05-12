@@ -10,7 +10,7 @@ use Drupal\file\FileRepositoryInterface;
 /**
  * Generate json media collection.
  */
-class Collection {
+class Generator {
 
   // Lucidpress api version.
   const VESRION = 1;

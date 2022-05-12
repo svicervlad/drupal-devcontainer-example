@@ -3,8 +3,8 @@ services:
     class: Drupal\lucidpress_dam\LucidpressDamPluginManager
     parent: default_plugin_manager
 
-  lucidpress_dam.collection:
-    class: Drupal\lucidpress_dam\Collection
+  lucidpress_dam.generator:
+    class: Drupal\lucidpress_dam\Generator
     arguments:
       - '@plugin.manager.lucidpress_dam'
       - '@file.repository'

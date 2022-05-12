@@ -2,6 +2,6 @@ services:
   lucidpress_dam.commands:
     class: \Drupal\lucidpress_dam\Commands\LucidpressDamCommands
     arguments:
-      - '@lucidpress_dam.collection'
+      - '@lucidpress_dam.generator'
     tags:
       - { name: drush.command }
