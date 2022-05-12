@@ -1,0 +1,11 @@
+{
+    "name": "org/lucidpress_dam",
+    "type": "drupal-drush",
+    "extra": {
+        "drush": {
+            "services": {
+                "drush.services.yml": "^11"
+            }
+        }
+    }
+}

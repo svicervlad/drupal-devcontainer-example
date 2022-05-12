@@ -1,0 +1,7 @@
+services:
+  lucidpress_dam.commands:
+    class: \Drupal\lucidpress_dam\Commands\LucidpressDamCommands
+    arguments:
+      - '@lucidpress_dam.collection'
+    tags:
+      - { name: drush.command }
