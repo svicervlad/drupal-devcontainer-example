@@ -13,6 +13,7 @@
 	 },
 	"settings": {
 		"editor.renderWhitespace": "boundary",
+		"files.trimTrailingWhitespace": true,
 		"editor.rulers": [
 			120
 		],
