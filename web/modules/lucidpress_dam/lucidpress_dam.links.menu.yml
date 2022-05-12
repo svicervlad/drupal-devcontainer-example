@@ -1,0 +1,6 @@
+lucidpress_dam.settings_form:
+  title: 'Lucidpress DAM Integrations'
+  description: 'Configure Lucidpress DAM Integrations.'
+  parent: system.admin_config_system
+  route_name: lucidpress_dam.settings_form
+  weight: 10

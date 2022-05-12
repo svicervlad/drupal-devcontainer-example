@@ -1,0 +1,7 @@
+lucidpress_dam.settings_form:
+  path: '/admin/config/system/lucidpress-dam'
+  defaults:
+    _title: 'Lucidpress DAM Integrations settings'
+    _form: 'Drupal\lucidpress_dam\Form\SettingsForm'
+  requirements:
+    _permission: 'administer lucidpress_dam configuration'

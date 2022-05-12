@@ -1,0 +1,8 @@
+# Schema for the configuration files of the Lucidpress DAM Integrations module.
+lucidpress_dam.settings:
+  type: config_object
+  label: 'Lucidpress DAM Integrations settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'
