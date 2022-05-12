@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/php:0-${VARIANT}
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y mariadb-client \
-        bash-completion \ß
+        bash-completion \
         libfreetype6-dev \
         libjpeg-dev \
         libpng-dev \
