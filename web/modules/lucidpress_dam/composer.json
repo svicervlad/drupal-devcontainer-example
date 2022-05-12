@@ -1,5 +1,5 @@
 {
-    "name": "org/lucidpress_dam",
+    "name": "drupal/lucidpress_dam",
     "type": "drupal-drush",
     "extra": {
         "drush": {
