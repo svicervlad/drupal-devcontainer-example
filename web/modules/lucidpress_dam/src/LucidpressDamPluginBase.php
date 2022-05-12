@@ -32,7 +32,8 @@ abstract class LucidpressDamPluginBase extends PluginBase implements LucidpressD
       ['drupal', 'logo', 'stacked']
     ));
     $general_folder->addFolder($drupal_folder);
-    return $general_folder;
+    $data = [$general_folder];
+    return $data;
   }
 
 }

@@ -36,17 +36,20 @@ class LucidpressDamCommands extends DrushCommands {
   }
 
   /**
-   * Generate media collection for lucidpress.
+   * Generate assets collection for lucidpress.
    *
-   * @usage lucidpress_dam:gen
-   *   Usage description
+   * @param string $plugin_id
+   *   The lucidpress_dam plugin.
+   *
+   * @usage lucidpress_dam:gen example
+   *   Generate lucidpress_dam json file.
    *
    * @command lucidpress_dam:gen
    * @aliases lucidpress-gen
    */
-  public function generateCollection() {
-    $this->collection->generate();
-    $this->logger()->success(dt('Done!.'));
+  public function generate(string $plugin_id) {
+    $url = $this->collection->generate($plugin_id);
+    $this->logger()->success(dt('Lucidpress DAM api file generated, url: ') . $url);
   }
 
 }

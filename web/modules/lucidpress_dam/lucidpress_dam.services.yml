@@ -7,3 +7,7 @@ services:
     class: Drupal\lucidpress_dam\Collection
     arguments:
       - '@plugin.manager.lucidpress_dam'
+      - '@file.repository'
+      - '@file_system'
+      - '@file_url_generator'
+      - '@config.factory'
