@@ -98,6 +98,7 @@ class Generator {
     $destination = $directory . $plugin_id . '.json';
     /** @var \Drupal\file\Entity\File $file */
     $file = $this->fileRepository->writeData($data, $destination, FileSystemInterface::EXISTS_REPLACE);
+    $file->setMimeType('application/json');
     $file->save();
     $url = $this->fileUrlGenerator->generateString($file->getFileUri());
     return $url;
