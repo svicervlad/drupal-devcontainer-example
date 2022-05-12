@@ -2,3 +2,6 @@ services:
   plugin.manager.lucidpress_dam:
     class: Drupal\lucidpress_dam\LucidpressDamPluginManager
     parent: default_plugin_manager
+
+  lucidpress_dam.collection:
+    class: Drupal\lucidpress_dam\Collection
