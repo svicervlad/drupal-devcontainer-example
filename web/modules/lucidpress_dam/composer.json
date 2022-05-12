@@ -1,6 +1,13 @@
 {
     "name": "drupal/lucidpress_dam",
-    "type": "drupal-drush",
+    "description": "Provides a mechanism for modules to automatically generate aliases for the content they manage.",
+    "type": "drupal-module",
+    "homepage": "https://www.drupal.org/project/lucidpress_dam",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/lucidpress_dam",
+        "documentation": "https://www.drupal.org/docs/8/modules/lucidpress_dam",
+        "source": "https://cgit.drupalcode.org/lucidpress_dam"
+    },
     "extra": {
         "drush": {
             "services": {
