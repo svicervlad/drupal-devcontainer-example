@@ -3,15 +3,32 @@
 namespace Drupal\lucidpress_dam;
 
 /**
- * Service description.
+ * Generate json media collection.
  */
 class Collection {
 
   /**
-   * Method description.
+   * The Plugin Manager.
+   *
+   * @var \Drupal\lucidpress_dam\LucidpressDamPluginManager
    */
-  public function doSomething() {
-    // @DCG place your code here.
+  protected $pluginManager;
+
+  /**
+   * The controller constructor.
+   *
+   * @param \Drupal\lucidpress_dam\LucidpressDamPluginManager $pluginManager
+   *   The plugin.manager service.
+   */
+  public function __construct(LucidpressDamPluginManager $pluginManager) {
+    $this->pluginManager = $pluginManager;
+  }
+
+  /**
+   * Basic method to generate collection.
+   */
+  public function generate() {
+    $plugins = $this->pluginManager->getDefinitions();
   }
 
 }

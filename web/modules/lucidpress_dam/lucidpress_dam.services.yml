@@ -5,3 +5,5 @@ services:
 
   lucidpress_dam.collection:
     class: Drupal\lucidpress_dam\Collection
+    arguments:
+      - '@plugin.manager.lucidpress_dam'
