@@ -10,7 +10,7 @@
 		"cpus": 2,
 		"memory": "2gb",
 		"storage": "4gb"
-	 },
+	},
 	"settings": {
 		"editor.renderWhitespace": "boundary",
 		"files.trimTrailingWhitespace": true,
@@ -18,6 +18,9 @@
 			120
 		],
 		"editor.tabSize": 2,
+		"editor.tabCompletion": "on",
+		"editor.insertSpaces": true,
+		"files.insertFinalNewline": true,
 		"editor.wordWrap": "off",
 		"editor.wordWrapColumn": 120,
 		"emmet.includeLanguages": {
