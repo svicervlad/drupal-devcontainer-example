@@ -13,6 +13,7 @@
 	 },
 	"settings": {
 		"editor.renderWhitespace": "boundary",
+		"files.trimTrailingWhitespace": true,
 		"editor.rulers": [
 			120
 		],
@@ -84,8 +85,6 @@
 		"bmewburn.vscode-intelephense-client",
 		"neilbrayfield.php-docblocker",
 		"mrmlnc.vscode-apache",
-		"mtxr.sqltools",
-		"mtxr.sqltools-driver-mysql",
 		"eamodio.gitlens",
 		"nadim-vscode.symfony-code-snippets",
 		"valeryanm.vscode-phpsab"
