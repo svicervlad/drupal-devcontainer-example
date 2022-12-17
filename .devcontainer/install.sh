@@ -7,7 +7,7 @@ NORMAL_COLOR='\033[0m';
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-echo "export PATH="\$PATH:\$CODESPACE_VSCODE_FOLDER/vendor/bin"" >> ~/.bashrc
+echo "export PATH="\$PATH:\$VSCODE_REMOTE_FOLDER/vendor/bin"" >> ~/.bashrc
 
 if [ ! -L "/code" ]; then
   sudo ln -sf $(pwd) /code

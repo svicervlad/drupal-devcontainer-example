@@ -4,6 +4,9 @@
 	"name": "Drupal",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
+	"remoteEnv": {
+		"VSCODE_REMOTE_FOLDER": "/workspaces/${localWorkspaceFolderBasename}"
+	},
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
