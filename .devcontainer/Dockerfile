@@ -1,8 +1,7 @@
-ARG VARIANT=8-bullseye
-FROM mcr.microsoft.com/vscode/devcontainers/php:0-${VARIANT}
+FROM mcr.microsoft.com/devcontainers/php:0-8.2-bullseye
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y mariadb-client \
+    && apt-get install -y mariadb-client \ 
         libfreetype6-dev \
         libjpeg-dev \
         libpng-dev \
@@ -11,18 +10,17 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         libzip-dev \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
-RUN docker-php-ext-configure gd \
-    --with-freetype \
-    --with-webp \
-    --with-jpeg=/usr
+RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg --with-webp
 
+# Install php-mysql driver
 RUN docker-php-ext-install -j "$(nproc)" gd mysqli pdo pdo_mysql zip
 
-ARG NODE_VERSION="none"
-RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
+# [Optional] Uncomment this section to install additional OS packages.
+# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get -y install --no-install-recommends <your-package-list-here>
 
-RUN sudo curl -fsSL -o /usr/local/bin/drush "https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar" && \
-  sudo chmod +x /usr/local/bin/drush
+# [Optional] Uncomment this line to install global node packages.
+# RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
 
 # Stop xdebug spaming
 RUN echo "xdebug.log=/dev/null" >> /usr/local/etc/php/conf.d/xdebug.ini
