@@ -16,7 +16,5 @@ fi
 printf "\n${SUCCESS_COLOR}${bold}Run composer install...\n\n${NORMAL_COLOR}";
 composer install -n || { printf "${ERROR_COLOR}${bold}An error occurred while install dependencies by composer.\n${NORMAL_COLOR}${normal}"; exit 1; };
 
-export PATH="$PATH:$CODESPACE_VSCODE_FOLDER/vendor/bin"
-
 printf "\n${SUCCESS_COLOR}${bold}Install standart drupal...\n\n${NORMAL_COLOR}${normal}";
-drush si --site-name=DEV --account-pass=admin -y
+./vendor/bin/drush si --site-name=DEV --account-pass=admin -y
