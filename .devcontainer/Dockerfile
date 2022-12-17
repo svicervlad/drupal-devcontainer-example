@@ -1,7 +1,8 @@
 FROM mcr.microsoft.com/devcontainers/php:0-8.2-bullseye
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y mariadb-client \ 
+    && apt-get install -y mariadb-client \
+        bash-completion \
         libfreetype6-dev \
         libjpeg-dev \
         libpng-dev \
