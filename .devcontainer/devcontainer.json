@@ -14,7 +14,7 @@
 		8080,
 		3306
 	],
-	"postCreateCommand": "sudo ln -sf $(pwd) /code && composer install -n && drush si --site-name=DEV --account-pass=admin -y",
+	"postCreateCommand": "bash .devcontainer/install.sh",
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
 	// Configure tool-specific properties.
