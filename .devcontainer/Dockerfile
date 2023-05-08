@@ -29,3 +29,6 @@ RUN echo "xdebug.log=/dev/null" >> /usr/local/etc/php/conf.d/xdebug.ini
 COPY ./apache.conf /etc/apache2/sites-enabled/apache.conf
 RUN echo "export APACHE_RUN_USER=vscode" >> /etc/apache2/envvars;
 RUN echo "export APACHE_RUN_GROUP=vscode" >> /etc/apache2/envvars;
+COPY ./librust_php_js_min.so /usr/local/lib/php/extensions/no-debug-non-zts-20220829/librust_php_js_min.so
+
+RUN echo "extension=librust_php_js_min.so" >> /usr/local/etc/php/conf.d/rust_php_js_min.ini
