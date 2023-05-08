@@ -18,3 +18,4 @@ composer install -n || { printf "${ERROR_COLOR}${bold}An error occurred while in
 
 printf "\n${SUCCESS_COLOR}${bold}Install standart drupal...\n\n${NORMAL_COLOR}${normal}";
 ./vendor/bin/drush si --site-name=DEV --account-pass=admin -y
+./vendor/bin/drush en advagg advagg_ext_minify advagg_css_minify advagg_js_minify -y
