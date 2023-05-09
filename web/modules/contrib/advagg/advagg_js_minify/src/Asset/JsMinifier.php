@@ -354,7 +354,7 @@ class JsMinifier extends SingleAssetOptimizerBase {
     }
     catch (\Exception $e) {
       // Log the JSqueeze exception and rollback to uncompressed content.
-      $this->logger->warning('JSqueeze had a possible error minifying: @file. Using uncompressed version. Error: ' . $e->getMessage(), ['@file' => $path]);
+      $this->logger->warning('Rust minifier had a possible error minifying: @file. Using uncompressed version. Error: ' . $e->getMessage(), ['@file' => $path]);
       $contents = $contents_before;
     }
     ob_end_clean();
