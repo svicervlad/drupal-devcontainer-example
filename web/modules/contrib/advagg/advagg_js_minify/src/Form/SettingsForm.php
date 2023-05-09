@@ -67,6 +67,7 @@ class SettingsForm extends ConfigFormBase {
       // 3 is JSMin c extension.
       4 => $this->t('JShrink ~1000ms'),
       5 => $this->t('JSqueeze ~600ms'),
+
     ];
     if (function_exists('jsmin')) {
       $options[3] = $this->t('JSMin ~2ms');
@@ -76,6 +77,13 @@ class SettingsForm extends ConfigFormBase {
       $description = $this->t('You can use the much faster C version of JSMin (~2ms) by installing the <a href="@php_jsmin">JSMin PHP Extension</a> on this server.', [
         '@php_jsmin' => 'https://github.com/sqmk/pecl-jsmin/',
       ]);
+    }
+    if (class_exists('Minifier')) {
+      $options[6] = $this->t('Rust Minifier ~2ms');
+      $description = $this->t('Rust Minifier is the very fast rust complied version. Recommend using it.');
+    }
+    else {
+      // Todo.
     }
 
     $form['minifier'] = [

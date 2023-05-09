@@ -97,6 +97,7 @@ class JsMinifier extends SingleAssetOptimizerBase {
       3 => [$this, 'minifyJsmin'],
       4 => [$this, 'minifyJshrink'],
       5 => [$this, 'minifyJsqueeze'],
+      6 => [$this, 'minifyRust'],
     ];
     return $functions[$minifier];
   }
@@ -309,6 +310,38 @@ class JsMinifier extends SingleAssetOptimizerBase {
         $this->config->get('add_license'),
         FALSE
       );
+
+      // Capture any output from JSqueeze.
+      $error = trim(ob_get_contents());
+      if (!empty($error)) {
+        throw new \Exception($error);
+      }
+    }
+    catch (\Exception $e) {
+      // Log the JSqueeze exception and rollback to uncompressed content.
+      $this->logger->warning('JSqueeze had a possible error minifying: @file. Using uncompressed version. Error: ' . $e->getMessage(), ['@file' => $path]);
+      $contents = $contents_before;
+    }
+    ob_end_clean();
+  }
+
+  /**
+   * Minify a JS string using rust minifier.
+   *
+   * @param string $contents
+   *   Javascript string.
+   * @param string $path
+   *   Path to the file being minified.
+   */
+  public function minifyRust(&$contents, $path = NULL) {
+    $contents_before = $contents;
+
+    ob_start();
+    try {
+      // Minify the contents of the aggregated file.
+      // @codingStandardsIgnoreLine
+      $jz = new \Minifier();
+      $contents = $jz->jsMinify($contents);
 
       // Capture any output from JSqueeze.
       $error = trim(ob_get_contents());
