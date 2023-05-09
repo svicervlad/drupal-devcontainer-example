@@ -335,6 +335,9 @@ class JsMinifier extends SingleAssetOptimizerBase {
    */
   public function minifyRust(&$contents, $path = NULL) {
     $contents_before = $contents;
+    if (!class_exists('Minifier')) {
+      return;
+    }
 
     ob_start();
     try {
