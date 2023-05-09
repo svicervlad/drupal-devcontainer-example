@@ -49,7 +49,6 @@
 /web/robots.txt
 /web/update.php
 /web/web.config
-/web/modules/contrib/
 
 # Ignore vendor dependencies and scripts
 /vendor
