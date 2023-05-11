@@ -71,6 +71,7 @@ class SettingsForm extends ConfigFormBase {
       0 => $this->t('Disabled'),
       1 => $this->t('Core'),
       2 => $this->t('YUI Compressor'),
+      3 => $this->t('Rust CSS minifier'),
     ];
     $form['minifier'] = [
       '#type' => 'radios',

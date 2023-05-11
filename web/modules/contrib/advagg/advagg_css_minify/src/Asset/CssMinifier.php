@@ -57,13 +57,12 @@ class CssMinifier extends SingleAssetOptimizerBase {
     $contents = $this->clean($contents, $asset);
     $contents_original = $contents;
 
-    // Do nothing if core minification is selected.
-    if ($minifier === 1) {
-      $contents = trim($this->minifyCore($contents));
-    }
-    else {
-      $contents = trim($this->minifyCssMin($contents));
-    }
+    $contents = match($minifier) {
+      1 => trim($this->minifyCore($contents)),
+      2 => trim($this->minifyCssMin($contents)),
+      3 => class_exists('Minifier') ? (new \Minifier())->cssMinify($contents) : $contents,
+      default => $contents,
+    };
 
     // If the contents are not empty, ensure that $data ends with ; or }.
     if (trim($contents) !== "" && strpbrk(substr(trim($contents), -1), ';})') === FALSE) {
