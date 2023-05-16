@@ -16,6 +16,7 @@
   ],
   "require": {
     "composer/installers": "^2.0",
+    "cweagans/composer-patches": "^1",
     "drupal/advagg": "^6.0@alpha",
     "drupal/core-composer-scaffold": "^10.0",
     "drupal/core-project-message": "^10.0",
@@ -36,12 +37,13 @@
   "prefer-stable": true,
   "config": {
       "allow-plugins": {
-          "composer/installers": true,
-          "drupal/core-composer-scaffold": true,
-          "drupal/core-project-message": true,
-          "phpstan/extension-installer": true,
-          "dealerdirect/phpcodesniffer-composer-installer": true
-      },
+      "composer/installers": true,
+      "drupal/core-composer-scaffold": true,
+      "drupal/core-project-message": true,
+      "phpstan/extension-installer": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "cweagans/composer-patches": true
+    },
       "sort-packages": true
   },
   "extra": {
@@ -49,6 +51,11 @@
           "locations": {
               "web-root": "web/"
           }
+      },
+      "patches": {
+        "drupal/feeds": {
+            "Add a mapping target for 'changed' (Updated date) https://www.drupal.org/project/feeds/issues/3060308": "https://www.drupal.org/files/issues/2023-05-11/feeds-add-changed-mapping-3060308-13.patch"
+        }
       },
       "installer-paths": {
           "web/core": ["type:drupal-core"],
