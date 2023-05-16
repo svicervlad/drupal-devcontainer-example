@@ -1,0 +1,166 @@
+uuid: 14e97585-76bf-4019-a415-92b566e02ba1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.article.body
+    - node.type.article
+  module:
+    - feeds_ex
+    - feeds_log
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_log:
+    status: true
+    operations:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+      cleaned: cleaned
+    items:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+    source: true
+  feeds_tamper:
+    tampers:
+      cd9a1d0b-99d9-42e1-b0d1-db57b4921d88:
+        uuid: cd9a1d0b-99d9-42e1-b0d1-db57b4921d88
+        plugin: strtotime
+        source: attributes_revision_timestamp
+        weight: 0
+        label: 'String to Unix Timestamp'
+      a730265e-e4d9-4b2f-9125-075683c98433:
+        num_char: 200
+        ellipses: true
+        wordsafe: true
+        uuid: a730265e-e4d9-4b2f-9125-075683c98433
+        plugin: truncate_text
+        source: attributes_field_summary_value
+        weight: -9
+        label: Truncate
+      d91c420e-c920-4fa6-b213-9064603b61de:
+        glue: ','
+        uuid: d91c420e-c920-4fa6-b213-9064603b61de
+        plugin: implode
+        source: attributes_field_summary_value
+        weight: -10
+        label: Implode
+label: ArticleSync
+id: articlesync
+description: ''
+help: ''
+import_period: 3600
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: true
+  fallback_hub: ''
+  request_timeout: 30
+parser: jsonpath
+parser_configuration:
+  context:
+    value: '$.data.*'
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: article
+  langcode: en
+  insert_new: 1
+  update_existing: 2
+  update_non_existent: _delete
+  skip_hash_check: false
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+custom_sources:
+  '':
+    value: ''
+    label: ''
+    machine_name: ''
+    type: blank
+  title:
+    value: title
+    label: title
+    machine_name: title
+    type: json
+  field_ygtc_content:
+    value: field_ygtc_content
+    label: field_ygtc_content
+    machine_name: field_ygtc_content
+    type: json
+  field_ygtc_content_processed:
+    value: field_ygtc_content_processed
+    label: field_ygtc_content_processed
+    machine_name: field_ygtc_content_processed
+    type: json
+  title2:
+    value: title
+    label: title
+    machine_name: title2
+    type: json
+  field_ygtc_content2:
+    value: field_ygtc_content
+    label: field_ygtc_content
+    machine_name: field_ygtc_content2
+    type: json
+  field_summary:
+    value: field_summary
+    label: field_summary
+    machine_name: field_summary
+    type: json
+  attributes_title:
+    value: attributes.title
+    label: attributes.title
+    machine_name: attributes_title
+    type: json
+  attributes_field_ygtc_content_value:
+    value: attributes.field_ygtc_content.value
+    label: attributes.field_ygtc_content.value
+    machine_name: attributes_field_ygtc_content_value
+    type: json
+  attributes_field_summary_value:
+    value: attributes.field_summary.value
+    label: attributes.field_summary.value
+    machine_name: attributes_field_summary_value
+    type: json
+  attributes_revision_timestamp:
+    value: attributes.revision_timestamp
+    label: attributes.revision_timestamp
+    machine_name: attributes_revision_timestamp
+    type: json
+mappings:
+  -
+    target: title
+    map:
+      value: attributes_title
+    settings:
+      language: null
+    unique:
+      value: '1'
+  -
+    target: body
+    map:
+      value: attributes_field_ygtc_content_value
+      summary: attributes_field_summary_value
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: revision_timestamp
+    map:
+      value: attributes_revision_timestamp
+    settings:
+      timezone: UTC
