@@ -29,12 +29,6 @@ third_party_settings:
     source: true
   feeds_tamper:
     tampers:
-      cd9a1d0b-99d9-42e1-b0d1-db57b4921d88:
-        uuid: cd9a1d0b-99d9-42e1-b0d1-db57b4921d88
-        plugin: strtotime
-        source: attributes_revision_timestamp
-        weight: 0
-        label: 'String to Unix Timestamp'
       a730265e-e4d9-4b2f-9125-075683c98433:
         num_char: 200
         ellipses: true
@@ -51,6 +45,18 @@ third_party_settings:
         source: attributes_field_summary_value
         weight: -10
         label: Implode
+      e874301e-363a-4a06-aafa-367a86e079f4:
+        uuid: e874301e-363a-4a06-aafa-367a86e079f4
+        plugin: strtotime
+        source: attributes_created
+        weight: 0
+        label: 'String to Unix Timestamp'
+      c9bd279a-d42d-4abd-bcfa-f1f64525f874:
+        uuid: c9bd279a-d42d-4abd-bcfa-f1f64525f874
+        plugin: strtotime
+        source: changed
+        weight: 0
+        label: 'String to Unix Timestamp'
 label: ArticleSync
 id: articlesync
 description: ''
@@ -141,6 +147,21 @@ custom_sources:
     label: attributes.revision_timestamp
     machine_name: attributes_revision_timestamp
     type: json
+  attributes_created:
+    value: attributes.created
+    label: attributes.created
+    machine_name: attributes_created
+    type: json
+  changed:
+    value: attributes.changed
+    label: attributes.changed
+    machine_name: changed
+    type: json
+  attributes_drupal_internal__nid:
+    value: attributes.drupal_internal__nid
+    label: attributes.drupal_internal__nid
+    machine_name: attributes_drupal_internal__nid
+    type: json
 mappings:
   -
     target: title
@@ -148,8 +169,7 @@ mappings:
       value: attributes_title
     settings:
       language: null
-    unique:
-      value: '1'
+    unique: {  }
   -
     target: body
     map:
@@ -161,6 +181,27 @@ mappings:
   -
     target: revision_timestamp
     map:
-      value: attributes_revision_timestamp
+      value: attributes_created
     settings:
       timezone: UTC
+  -
+    target: changed
+    map:
+      value: changed
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: created
+    map:
+      value: attributes_created
+    settings:
+      language: null
+      timezone: UTC
+  -
+    target: nid
+    map:
+      value: attributes_drupal_internal__nid
+    settings: {  }
+    unique:
+      value: '1'
